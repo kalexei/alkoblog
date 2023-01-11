@@ -63,7 +63,7 @@ const Sidebar: React.FC<SidebarProps> = props => {
               </Link>
             </li>
             <li>
-              <Link href={"/hire"} className={"flex items-center"}>
+              <Link href={"/hireme"} className={"flex items-center"}>
                 <IoPersonAddOutline className={"align-middle mr-2"} />
                 <span>Hire me</span>
               </Link>
