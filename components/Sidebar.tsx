@@ -53,7 +53,7 @@ const Sidebar: React.FC = () => {
                 onClick={() => toggleSidebar()}
               >
                 <AiOutlineInfoCircle className={"align-middle mr-2"} />
-                <span>About</span>
+                <span>About me</span>
               </Link>
             </li>
             <li>
