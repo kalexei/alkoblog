@@ -16,12 +16,12 @@ export const navLinks = [
     icon: AiOutlineInfoCircle,
   },
   {
-    name: "My projects",
+    name: "Projects",
     href: "/projects",
     icon: CgWebsite,
   },
   {
-    name: "My blog",
+    name: "Blog",
     href: "/blog",
     icon: MdOutlineLibraryBooks,
   },
