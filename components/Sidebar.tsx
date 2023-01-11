@@ -3,10 +3,8 @@
 import Link from "next/link";
 import React, { useCallback, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { IoCloseOutline, IoPersonAddOutline } from "react-icons/io5";
-import { AiOutlineHome, AiOutlineInfoCircle } from "react-icons/ai";
-import { CgWebsite } from "react-icons/cg";
-import { MdOutlineLibraryBooks } from "react-icons/md";
+import { IoCloseOutline } from "react-icons/io5";
+import { navLinks } from "../utils/constants";
 
 const Sidebar: React.FC = () => {
   const [isOpen, setOpen] = useState(false);
@@ -36,56 +34,18 @@ const Sidebar: React.FC = () => {
           <ul
             className={"h-full flex flex-col justify-start space-y-6 text-lg"}
           >
-            <li>
-              <Link
-                href={"/"}
-                className={"flex items-center"}
-                onClick={() => toggleSidebar()}
-              >
-                <AiOutlineHome className={"align-middle mr-2"} />
-                <span>Home</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={"/about"}
-                className={"flex items-center"}
-                onClick={() => toggleSidebar()}
-              >
-                <AiOutlineInfoCircle className={"align-middle mr-2"} />
-                <span>About me</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={"/projects"}
-                className={"flex items-center"}
-                onClick={() => toggleSidebar()}
-              >
-                <CgWebsite className={"align-middle mr-2"} />
-                <span>My projects</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={"/blog"}
-                className={"flex items-center"}
-                onClick={() => toggleSidebar()}
-              >
-                <MdOutlineLibraryBooks className={"align-middle mr-2"} />
-                <span>My blogs</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={"/hireme"}
-                className={"flex items-center"}
-                onClick={() => toggleSidebar()}
-              >
-                <IoPersonAddOutline className={"align-middle mr-2"} />
-                <span>Hire me</span>
-              </Link>
-            </li>
+            {navLinks.map((link, i) => (
+              <li key={i}>
+                <Link
+                  className={"flex items-center"}
+                  onClick={() => toggleSidebar()}
+                  href={`${link.href}`}
+                >
+                  <link.icon className={"align-middle mr-2"} />
+                  <span>{link.name}</span>
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>

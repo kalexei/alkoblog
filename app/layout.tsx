@@ -4,7 +4,7 @@ import "../styles/globals.scss";
 import { Montserrat } from "@next/font/google";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
-import { title } from "../utils/constants";
+import { title, navLinks } from "../utils/constants";
 import Link from "next/link";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
@@ -24,24 +24,23 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div
               className={"w-full max-w-4xl flex items-center justify-between"}
             >
-              <h1 className={"text-xl"}>{title}</h1>
+              <h1 className={"text-xl"}>
+                <Link href={"/"}>{title}</Link>
+              </h1>
               <nav className={"flex max-md:hidden"}>
                 <ul className={"flex space-x-4"}>
-                  <li>
-                    <Link href={"/"}>Home</Link>
-                  </li>
-                  <li>
-                    <Link href={"/about"}>About me</Link>
-                  </li>
-                  <li>
-                    <Link href={"/projects"}>My projects</Link>
-                  </li>
-                  <li>
-                    <Link href={"/blog"}>My blogs</Link>
-                  </li>
-                  <li>
-                    <Link href={"/hireme"}>Hire me</Link>
-                  </li>
+                  {navLinks.map((link, i) => (
+                    <li key={i}>
+                      <Link
+                        href={`${link.href}`}
+                        className={
+                          "underline-offset-4 underline decoration-transparent hover:decoration-slate-400 transition-colors"
+                        }
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </nav>
               <div className={"hidden max-md:block"}>
@@ -49,7 +48,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </div>
             </div>
           </header>
-          <main className={"flex-1 p-4"}>{children}</main>
+          <main className={"flex-1 p-4 max-w-4xl mx-auto"}>{children}</main>
           <Footer />
         </div>
       </body>

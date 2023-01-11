@@ -1,8 +1,6 @@
 import React from "react";
 
-interface Blog {}
-
-const Blog: React.FC<Blog> = () => {
+const Blog: React.FC = () => {
   return <div>Blog works!</div>;
 };
 
