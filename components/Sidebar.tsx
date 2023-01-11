@@ -8,9 +8,7 @@ import { AiOutlineHome, AiOutlineInfoCircle } from "react-icons/ai";
 import { CgWebsite } from "react-icons/cg";
 import { MdOutlineLibraryBooks } from "react-icons/md";
 
-interface SidebarProps {}
-
-const Sidebar: React.FC<SidebarProps> = props => {
+const Sidebar: React.FC = () => {
   const [isOpen, setOpen] = useState(false);
 
   const toggleSidebar = useCallback(() => {
@@ -19,14 +17,14 @@ const Sidebar: React.FC<SidebarProps> = props => {
 
   return (
     <>
-      <div className={"toggleButton"}>
+      <div>
         <RxHamburgerMenu
           className={"text-3xl"}
           onClick={() => toggleSidebar()}
         />
       </div>
       <div
-        className={`flex fixed flex-col h-full bg-gray-700 bg-opacity-95 px-4 py-2 transition-transform top-0 bottom-0 right-0 ${
+        className={`flex fixed flex-col h-full z-20 border-l-2 bg-inherit px-4 py-2 transition-transform top-0 bottom-0 right-0 ${
           isOpen ? "flex -translate-x-18" : "translate-x-52"
         }`}
       >
@@ -39,31 +37,51 @@ const Sidebar: React.FC<SidebarProps> = props => {
             className={"h-full flex flex-col justify-start space-y-6 text-lg"}
           >
             <li>
-              <Link href={"/"} className={"flex items-center"}>
-                <AiOutlineHome className={"align-middle mr-2"} />{" "}
+              <Link
+                href={"/"}
+                className={"flex items-center"}
+                onClick={() => toggleSidebar()}
+              >
+                <AiOutlineHome className={"align-middle mr-2"} />
                 <span>Home</span>
               </Link>
             </li>
             <li>
-              <Link href={"/about"} className={"flex items-center"}>
+              <Link
+                href={"/about"}
+                className={"flex items-center"}
+                onClick={() => toggleSidebar()}
+              >
                 <AiOutlineInfoCircle className={"align-middle mr-2"} />
                 <span>About</span>
               </Link>
             </li>
             <li>
-              <Link href={"/projects"} className={"flex items-center"}>
+              <Link
+                href={"/projects"}
+                className={"flex items-center"}
+                onClick={() => toggleSidebar()}
+              >
                 <CgWebsite className={"align-middle mr-2"} />
                 <span>My projects</span>
               </Link>
             </li>
             <li>
-              <Link href={"/blog"} className={"flex items-center"}>
+              <Link
+                href={"/blog"}
+                className={"flex items-center"}
+                onClick={() => toggleSidebar()}
+              >
                 <MdOutlineLibraryBooks className={"align-middle mr-2"} />
                 <span>My blogs</span>
               </Link>
             </li>
             <li>
-              <Link href={"/hireme"} className={"flex items-center"}>
+              <Link
+                href={"/hireme"}
+                className={"flex items-center"}
+                onClick={() => toggleSidebar()}
+              >
                 <IoPersonAddOutline className={"align-middle mr-2"} />
                 <span>Hire me</span>
               </Link>
@@ -71,6 +89,14 @@ const Sidebar: React.FC<SidebarProps> = props => {
           </ul>
         </nav>
       </div>
+      {isOpen ? (
+        <div
+          className={
+            "absolute z-0 bottom-0 top-0 left-0 right-0 bg-opacity-25 backdrop-blur-sm"
+          }
+          onClick={() => toggleSidebar()}
+        ></div>
+      ) : null}
     </>
   );
 };
