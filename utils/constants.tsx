@@ -31,3 +31,32 @@ export const navLinks = [
     icon: IoPersonAddOutline,
   },
 ];
+export const portfolio = {
+  skills: [
+    "Web Design / Development",
+    "SEO",
+    "Hosting / DNS",
+    "E-Commerce",
+    "Digital Marketing",
+    "Database Management",
+    "Photo / Video Editing",
+  ],
+
+  technologies: [
+    "HTML / CSS",
+    "Javascript",
+    "Typescript",
+    "Node.js",
+    "React",
+    "Next.js",
+    "TailwindCSS",
+    "Sass / Scss",
+    "Shopify",
+    "Wordpress",
+    "Git / Github",
+    "PostgreSQL",
+    "MongoDB",
+    "Photoshop",
+    "Figma",
+  ],
+};

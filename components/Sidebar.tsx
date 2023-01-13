@@ -11,7 +11,7 @@ const Sidebar: React.FC = () => {
 
   const toggleSidebar = useCallback(() => {
     setOpen(prev => !prev);
-  }, []);
+  }, [setOpen]);
 
   return (
     <>
@@ -52,7 +52,7 @@ const Sidebar: React.FC = () => {
       {isOpen ? (
         <div
           className={
-            "absolute z-0 bottom-0 top-0 left-0 right-0 bg-opacity-25 backdrop-blur-sm"
+            "fixed z-0 bottom-0 top-0 left-0 right-0 bg-opacity-25 backdrop-blur-sm"
           }
           onClick={() => toggleSidebar()}
         ></div>

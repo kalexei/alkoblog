@@ -18,7 +18,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div id="root">
           <header
             className={
-              "px-6 py-3 border-b-2 border-gray-300 flex justify-center"
+              "fixed bg-inherit left-0 right-0 px-6 py-3 border-b-2 border-gray-300 flex justify-center"
             }
           >
             <div
@@ -48,7 +48,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </div>
             </div>
           </header>
-          <main className={"flex-1 p-4 max-w-4xl mx-auto"}>{children}</main>
+          <main
+            className={"flex-1 pt-24 p-4 max-md:max-w-full max-w-4xl mx-auto"}
+          >
+            {children}
+          </main>
           <Footer />
         </div>
       </body>
