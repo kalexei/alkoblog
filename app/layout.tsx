@@ -3,7 +3,6 @@ import "../styles/globals.scss";
 
 import { Montserrat } from "@next/font/google";
 import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footer";
 import { title, navLinks } from "../utils/constants";
 import Link from "next/link";
 
@@ -53,7 +52,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           >
             {children}
           </main>
-          <Footer />
         </div>
       </body>
     </html>
