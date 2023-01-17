@@ -17,7 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div id="root">
           <header
             className={
-              "fixed bg-inherit left-0 right-0 px-6 py-3 border-b-2 border-gray-300 flex justify-center"
+              "fixed bg-inherit left-0 right-0 px-6 py-3 border-b-2 border-slate-300 flex justify-center"
             }
           >
             <div
@@ -33,7 +33,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                       <Link
                         href={`${link.href}`}
                         className={
-                          "underline-offset-4 underline decoration-transparent hover:decoration-slate-400 transition-colors"
+                          "underline-offset-4 underline decoration-transparent hover:decoration-slate-600 transition-colors"
                         }
                       >
                         {link.name}
@@ -48,7 +48,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </div>
           </header>
           <main
-            className={"flex-1 pt-24 p-4 max-md:max-w-full max-w-4xl mx-auto"}
+            className={"flex-1 pt-24 px-2 max-md:max-w-full max-w-4xl mx-auto"}
           >
             {children}
           </main>

@@ -22,7 +22,7 @@ const Sidebar: React.FC = () => {
         />
       </div>
       <div
-        className={`flex fixed flex-col h-full z-20 border-l-2 bg-inherit px-4 py-2 transition-transform top-0 bottom-0 right-0 ${
+        className={`flex fixed flex-col h-full z-20 border-l-2 bg-slate-200 px-4 py-2 transition-transform top-0 bottom-0 right-0 ${
           isOpen ? "flex -translate-x-18" : "translate-x-52"
         }`}
       >
@@ -30,9 +30,9 @@ const Sidebar: React.FC = () => {
           className={"text-5xl self-end"}
           onClick={() => toggleSidebar()}
         />
-        <nav className={"h-full mt-12 mr-10"}>
+        <nav className={"h-full mt-12 mr-16"}>
           <ul
-            className={"h-full flex flex-col justify-start space-y-6 text-lg"}
+            className={"h-full flex flex-col justify-start text-lg space-y-6"}
           >
             {navLinks.map((link, i) => (
               <li key={i}>
