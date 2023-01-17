@@ -10,13 +10,15 @@ const Home: React.FC = () => {
         id="introduction"
         className={"flex flex-col justify-around items-stretch text-center"}
       >
-        <h2 className={"text-3xl mb-12"}>{"👋 Hello there!"}</h2>
+        <h2 className={"text-3xl mb-12 sm:text-4xl md:text-5xl"}>
+          {"👋 Hello there!"}
+        </h2>
         <div
           className={
-            "grid place-items-center gap-8 sm:grid-cols-[2fr_1fr] sm:grid-rows-2 sm:max-w-2xl sm:mx-auto"
+            "grid place-items-center gap-8 sm:grid-cols-[2fr_1fr] sm:grid-rows-2 sm:max-w-2xl sm:gap-y-6 sm:gap-x-8 sm:mx-auto"
           }
         >
-          <div className={"sm:justify-self-end"}>
+          <div className={"sm:justify-self-end sm:self-end"}>
             <p className={"text-lg md:text-2xl"}>{"My name is"}</p>
             <h3 className={"text-3xl md:text-4xl"}>{"Aleksei Kovalev"}</h3>
           </div>
@@ -32,7 +34,7 @@ const Home: React.FC = () => {
           width={150}
           className={"rounded-full mb-8 self-center"}
         /> */}
-          <p className={"flex flex-col sm:justify-self-end"}>
+          <p className={"flex flex-col sm:justify-self-end sm:self-start "}>
             <span className={"font-bold text-xl sm:text-2xl"}>
               {" 4+ years of experience "}
             </span>
