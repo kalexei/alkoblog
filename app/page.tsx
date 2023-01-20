@@ -54,7 +54,7 @@ const Home: React.FC = () => {
               <h1 className={"font-semibold text-2xl text-center mb-4"}>
                 {category.slice(0, 1).toUpperCase() + category.slice(1)}
               </h1>
-              <ul className={"flex flex-wrap space-x-2"}>
+              <ul className={"flex flex-wrap space-x-2 pr-2"}>
                 {items.map((item, i) => (
                   <li
                     key={i}
