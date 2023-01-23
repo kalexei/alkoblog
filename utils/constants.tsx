@@ -50,7 +50,7 @@ export const portfolio = {
     "React",
     "Next.js",
     "TailwindCSS",
-    "Sass / Scss",
+    "Sass",
     "Shopify",
     "Wordpress",
     "Git / Github",
